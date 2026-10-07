@@ -3,7 +3,8 @@
 ## 1. Deskripsi Singkat Program
 Program ini adalah aplikasi berbasis *Command Line Interface* (CLI) untuk mengelola data transaksi **Sistem Manajemen Rental Skateboard**. Program ini memungkinkan admin untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada data penyewaan. Sistem ini mendukung dua kategori penyewaan papan, yaitu *Street Skate* dan *Cruiser Skate*, dengan kalkulasi biaya sewa yang dinamis berdasarkan durasi hari dan tarif papan yang dipilih.
 
-> [TARUH SS DI SINI: Screenshot tampilan awal saat program di-run (Tampilan Menu Utama 1-5)]
+<img width="385" height="201" alt="{07A42B13-E95D-4E6E-8E27-F22E8540707B}" src="https://github.com/user-attachments/assets/b3ec4d8f-98a5-4251-8b9d-e2b62ac01bf1" />
+
 
 ## 2. Penjelasan Struktur Package
 Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Model-View-Controller)** untuk memisahkan antara antarmuka, logika bisnis, dan struktur data:
@@ -12,22 +13,28 @@ Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Mode
 *   **`controller`**: Package ini berisi kelas `RentalController` yang bertindak sebagai "otak" sistem. Mengelola `ArrayList<Penyewa>` dan menangani logika operasi CRUD (Tambah, Tampil, Update, Hapus) tanpa ada campur tangan sintaks *user interface* (System.out.print).
 *   **`main`**: Package ini berisi `MainApp` yang berfungsi secara eksklusif sebagai *entry point* untuk menjalankan program.
 
-> [TARUH SS DI SINI: Screenshot folder struktur project di NetBeans yang memperlihatkan package controller, main, model, dan view]
+<img width="320" height="317" alt="{2C9643D7-FB00-431D-89C2-0107EDC0B258}" src="https://github.com/user-attachments/assets/eacaedb4-5b06-4615-b60f-bf735ff7f531" />
+
 
 ## 3. Penjelasan Alur Program
 1. Saat program dijalankan melalui `MainApp`, sistem akan memanggil metode dari `RentalView` untuk menampilkan Menu Utama (1-5).
 2. Sistem akan meload *dummy data* awal melalui konstruktor `RentalController` untuk keperluan pengujian.
 3. Jika pengguna memilih menu **Tambah Data (1)**, `View` akan meminta input data, lalu mengirimkan data tersebut ke `Controller` untuk disimpan ke dalam memori `ArrayList` di dalam `Model`.
 
-> [TARUH SS DI SINI: Screenshot saat kamu berhasil melakukan input Tambah Data]
+<img width="739" height="414" alt="{B589CD10-5AD8-4687-9E06-CA67FDB022FC}" src="https://github.com/user-attachments/assets/edae733d-5596-40c6-a0cb-dc860f369cd8" />
+
 
 4. Jika pengguna memilih menu **Tampil Data (2)**, `View` akan meminta koleksi data dari `Controller` lalu mencetak detailnya ke layar secara dinamis (*Dynamic Method Dispatch*).
 
-> [TARUH SS DI SINI: Screenshot saat kamu memilih menu Tampil Data dan struk transaksinya muncul]
+<img width="485" height="646" alt="{73C5ABA0-FBBA-4A72-8C46-093042D9B40E}" src="https://github.com/user-attachments/assets/45137e6a-8bdb-4694-8f7f-ebef00d66694" />
+<img width="503" height="293" alt="{491CBEC5-195E-4CCA-8155-54482D77FAA1}" src="https://github.com/user-attachments/assets/6a3d4a05-e8e8-4a0f-bfed-6e90574c88c6" />
+
 
 5. Pada menu **Update (3)** dan **Delete (4)**, `View` meminta ID Rental yang ingin diproses, mendelegasikannya ke `Controller` untuk dicari, dan jika ditemukan, `Controller` akan mengubah/menghapus objek tersebut dari memori.
 
-> [TARUH SS DI SINI: Screenshot saat kamu berhasil melakukan Update lama sewa ATAU Delete data]
+<img width="486" height="92" alt="{1A3BFEC2-CFB9-4B77-835C-6014E3E5917A}" src="https://github.com/user-attachments/assets/c633f828-b1c8-459c-a2cc-e8c1a6596e88" />
+<img width="482" height="70" alt="{DC258FF5-3D9F-49EA-978C-15FF3E929997}" src="https://github.com/user-attachments/assets/15e5ab44-1113-432c-8dc3-bbb29a592593" />
+
 
 6. Program akan terus berulang (loop) selama pengguna tidak menekan opsi **Keluar (5)**. Setiap input karakter salah dilindungi oleh struktur *Exception Handling*.
 
