@@ -58,7 +58,7 @@ Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Mode
     *   **Overriding:** Kelas `StreetSkate` dan `CruiserSkate` menimpa metode dari kelas induknya dengan menggunakan anotasi `@Override` pada metode `tampilkanDetailPapan()` untuk mencetak spesifikasi yang berbeda (satu menampilkan ukuran roda, satu menampilkan panjang papan).
     *   **Overloading:** Pada kelas `Penyewa` terdapat dua metode bernama sama yaitu `hitungTotalBiaya()`. Metode pertama berdiri tanpa parameter (menghitung tarif normal), dan metode kedua menggunakan parameter `double diskon` (menghitung tarif setelah dikenakan potongan/diskon).
 
-# 6. Penjelasan Letak Penerapan Nilai Tambah (Nilai Plus)
+# 6. Penjelasan Nilai Tambah
 Proyek ini mengimplementasikan dua nilai tambah (Fitur Ekstra) di luar persyaratan dasar:
 1.  **Penerapan Interface (Antarmuka Kontrak Murni):**
     *   Terdapat pembuatan file `LayananRental.java` di dalam package `model` yang dideklarasikan sebagai `interface`.
