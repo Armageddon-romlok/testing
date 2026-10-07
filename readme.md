@@ -44,7 +44,6 @@ Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Mode
     *   Penggunaan **Setter** (seperti `setLamaSewa` di kelas `Penyewa`) untuk memvalidasi masukan data (jika lama sewa diinput 0 atau negatif, setter memaksa nilainya menjadi minimal 1 hari).
     *   Penggunaan *keyword* `final` pada atribut `idPapan` dan `idRental` agar nilainya bersifat mutlak (konstan) dan tidak bisa dimodifikasi setelah objek dibuat.
 
-> [TARUH SS DI SINI: (Opsional) Screenshot potongan kode yang menunjukkan keyword 'private' atau 'final']
 
 *   **Inheritance (Pewarisan):** 
     *   Terdapat penggunaan *keyword* `extends`. Kelas `StreetSkate` dan `CruiserSkate` merupakan kelas turunan (subclass) yang mewarisi atribut (`idPapan`, `merk`, `tarifSewa`) dan method dari kelas induk (superclass) `Skateboard`.
@@ -54,7 +53,6 @@ Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Mode
     *   **Abstract Class:** Kelas `Skateboard` dideklarasikan menggunakan *keyword* `abstract`. Hal ini menjadikan kelas tersebut sebagai *blueprint* murni yang tidak bisa diinstansiasi secara langsung.
     *   **Abstract Method:** Di dalam kelas `Skateboard` terdapat `public abstract void tampilkanDetailPapan();` yang hanya berisi deklarasi metode tanpa tubuh *(body)*. Metode ini memaksa (*enforce*) setiap subclass-nya untuk memiliki format tampilannya masing-masing.
 
-> [TARUH SS DI SINI: (Opsional) Screenshot potongan kode `public abstract class Skateboard`]
 
 *   **Polymorphism (Polimorfisme):**
     *   **Overriding:** Kelas `StreetSkate` dan `CruiserSkate` menimpa metode dari kelas induknya dengan menggunakan anotasi `@Override` pada metode `tampilkanDetailPapan()` untuk mencetak spesifikasi yang berbeda (satu menampilkan ukuran roda, satu menampilkan panjang papan).
@@ -70,4 +68,6 @@ Proyek ini mengimplementasikan dua nilai tambah (Fitur Ekstra) di luar persyarat
     *   Terdapat **Helper Method** khusus `bacaInputString()` di dalam kelas View yang berfungsi untuk menolak input kosong *(Anti-Bypass Enter/Spasi kosong)* sehingga integritas data string tetap terjaga.
     *   Validasi logika bisnis di `Controller` (method `isIdAda()`) yang menolak penambahan data jika **ID Rental duplikat/sudah ada** di dalam sistem.
 
-> [TARUH SS DI SINI: Screenshot saat kamu sengaja input huruf/typo di menu, ATAU input ID yang duplikat, untuk membuktikan error handling-nya berjalan (tidak crash)]
+<img width="365" height="136" alt="{087B088D-21DC-41C7-93D5-C99AB1805772}" src="https://github.com/user-attachments/assets/cfae2eb1-71bf-4cbe-9c55-91a2d031b7fe" />
+<img width="440" height="196" alt="{0A46F6C9-9EA7-47D0-B9BF-10FBF64CA8D2}" src="https://github.com/user-attachments/assets/09a3f6b4-79ea-4aad-9769-77e76a2c7afd" />
+
