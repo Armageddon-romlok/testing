@@ -8,7 +8,7 @@ Program ini adalah aplikasi berbasis *Command Line Interface* (CLI) untuk mengel
 
 # 2. Penjelasan Struktur Package
 Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Model-View-Controller)** untuk memisahkan antara antarmuka, logika bisnis, dan struktur data:
-*   **`model`**: Package ini berisi cetak biru (blueprint) data dan aturan bisnis murni. Berisi kelas `Skateboard`, `StreetSkate`, `CruiserSkate`, `Penyewa`, dan antarmuka `LayananRental`.
+**`model`**: Package ini berisi cetak biru (blueprint) data dan aturan bisnis murni. Berisi kelas `Skateboard`, `StreetSkate`, `CruiserSkate`, `Penyewa`, dan antarmuka `LayananRental`.
 *   **`view`**: Package ini berisi kelas `RentalView` yang bertugas khusus menangani I/O pengguna, menampilkan menu CLI, membaca input dengan `Scanner`, serta menangani blok *try-catch* (Error Handling).
 *   **`controller`**: Package ini berisi kelas `RentalController` yang bertindak sebagai "otak" sistem. Mengelola `ArrayList<Penyewa>` dan menangani logika operasi CRUD (Tambah, Tampil, Update, Hapus) tanpa ada campur tangan sintaks *user interface* (System.out.print).
 *   **`main`**: Package ini berisi `MainApp` yang berfungsi secara eksklusif sebagai *entry point* untuk menjalankan program.
