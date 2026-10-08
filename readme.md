@@ -79,8 +79,8 @@ Proyek ini mengimplementasikan dua nilai tambah (Fitur Ekstra) di luar persyarat
 1.  **Penerapan Interface (Antarmuka Kontrak Murni):**
     *   Terdapat pembuatan file `LayananRental.java` di dalam package `model` yang dideklarasikan sebagai `interface`.
     *   Interface ini diimplementasikan (menggunakan *keyword* `implements`) oleh kelas `Penyewa`. Kelas ini mematuhi kontrak dengan mendefinisikan secara paksa *(override)* logika untuk metode `konfirmasiPenyewaan()` dan `cetakStruk()`.
-2.  **Validasi Input dan Advanced Error Handling:**
-    *   Implementasi struktur `try-catch (InputMismatchException e)` untuk memblokir program *crash* jika pengguna mengetikkan huruf saat sistem meminta input angka.
+2.  **Validasi Input dan Exception Handling:**
+    *   Implementasi struktur try-catch (InputMismatchException e) untuk menangani kesalahan input ketika pengguna memasukkan tipe data yang tidak sesuai, seperti memasukkan huruf ketika sistem meminta input berupa angka, sehingga program tidak langsung berhenti (crash).
     *   Terdapat **Helper Method** khusus `bacaInputString()` di dalam kelas View yang berfungsi untuk menolak input kosong *(Anti-Bypass Enter/Spasi kosong)* sehingga integritas data string tetap terjaga.
     *   Validasi logika bisnis di `Controller` (method `isIdAda()`) yang menolak penambahan data jika **ID Rental duplikat/sudah ada** di dalam sistem.
 
