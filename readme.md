@@ -15,21 +15,6 @@ Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Mode
 
 <img width="320" height="317" alt="{2C9643D7-FB00-431D-89C2-0107EDC0B258}" src="https://github.com/user-attachments/assets/eacaedb4-5b06-4615-b60f-bf735ff7f531" />
 
-## 3.1 Implementasi CRUD
-
-### Create (Tambah Data)
-Proses **Create** digunakan untuk menambahkan data penyewaan baru ke dalam sistem. `RentalView` menerima input dari pengguna, kemudian mengirimkan data tersebut kepada `RentalController`. Controller melakukan validasi terhadap `ID Rental`, kemudian menambahkan objek `Penyewa` ke dalam `ArrayList<Penyewa>` apabila ID belum digunakan.
-
-### Read (Tampil Data)
-Proses **Read** digunakan untuk mengambil dan menampilkan data penyewaan yang tersimpan di dalam sistem. `RentalController` menyediakan koleksi data `Penyewa` kepada `RentalView`, kemudian View menampilkan informasi penyewaan beserta detail skateboard kepada pengguna.
-
-### Update (Ubah Data)
-Proses **Update** digunakan untuk mengubah data penyewaan berdasarkan `ID Rental`. `RentalController` melakukan pencarian terhadap data berdasarkan ID yang diberikan. Jika data ditemukan, informasi penyewaan akan diperbarui sesuai input baru dari pengguna.
-
-### Delete (Hapus Data)
-Proses **Delete** digunakan untuk menghapus data penyewaan berdasarkan `ID Rental`. `RentalController` mencari data berdasarkan ID yang diberikan dan menghapus objek tersebut dari `ArrayList<Penyewa>` apabila data ditemukan.
-
-
 
 # 3. Penjelasan Alur Program
 1. Saat program dijalankan melalui `MainApp`, sistem akan memanggil metode dari `RentalView` untuk menampilkan Menu Utama (1-5).
@@ -52,6 +37,21 @@ Proses **Delete** digunakan untuk menghapus data penyewaan berdasarkan `ID Renta
 
 
 6. Program akan terus berulang (loop) selama pengguna tidak menekan opsi **Keluar (5)**. Setiap input karakter salah dilindungi oleh struktur *Exception Handling*.
+
+
+### Create (Tambah Data)
+Proses **Create** digunakan untuk menambahkan data penyewaan baru ke dalam sistem. `RentalView` menerima input dari pengguna, kemudian mengirimkan data tersebut kepada `RentalController`. Controller melakukan validasi terhadap `ID Rental`, kemudian menambahkan objek `Penyewa` ke dalam `ArrayList<Penyewa>` apabila ID belum digunakan.
+
+### Read (Tampil Data)
+Proses **Read** digunakan untuk mengambil dan menampilkan data penyewaan yang tersimpan di dalam sistem. `RentalController` menyediakan koleksi data `Penyewa` kepada `RentalView`, kemudian View menampilkan informasi penyewaan beserta detail skateboard kepada pengguna.
+
+### Update (Ubah Data)
+Proses **Update** digunakan untuk mengubah data penyewaan berdasarkan `ID Rental`. `RentalController` melakukan pencarian terhadap data berdasarkan ID yang diberikan. Jika data ditemukan, informasi penyewaan akan diperbarui sesuai input baru dari pengguna.
+
+### Delete (Hapus Data)
+Proses **Delete** digunakan untuk menghapus data penyewaan berdasarkan `ID Rental`. `RentalController` mencari data berdasarkan ID yang diberikan dan menghapus objek tersebut dari `ArrayList<Penyewa>` apabila data ditemukan.
+
+
 
 # 4. Penjelasan Penerapan Encapsulation dan Inheritance
 *   **Encapsulation (Pengkapsulan):**
