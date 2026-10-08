@@ -15,16 +15,31 @@ Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Mode
 
 <img width="320" height="317" alt="{2C9643D7-FB00-431D-89C2-0107EDC0B258}" src="https://github.com/user-attachments/assets/eacaedb4-5b06-4615-b60f-bf735ff7f531" />
 
+## 3.1 Implementasi CRUD
+
+### Create (Tambah Data)
+Proses **Create** digunakan untuk menambahkan data penyewaan baru ke dalam sistem. `RentalView` menerima input dari pengguna, kemudian mengirimkan data tersebut kepada `RentalController`. Controller melakukan validasi terhadap `ID Rental`, kemudian menambahkan objek `Penyewa` ke dalam `ArrayList<Penyewa>` apabila ID belum digunakan.
+
+### Read (Tampil Data)
+Proses **Read** digunakan untuk mengambil dan menampilkan data penyewaan yang tersimpan di dalam sistem. `RentalController` menyediakan koleksi data `Penyewa` kepada `RentalView`, kemudian View menampilkan informasi penyewaan beserta detail skateboard kepada pengguna.
+
+### Update (Ubah Data)
+Proses **Update** digunakan untuk mengubah data penyewaan berdasarkan `ID Rental`. `RentalController` melakukan pencarian terhadap data berdasarkan ID yang diberikan. Jika data ditemukan, informasi penyewaan akan diperbarui sesuai input baru dari pengguna.
+
+### Delete (Hapus Data)
+Proses **Delete** digunakan untuk menghapus data penyewaan berdasarkan `ID Rental`. `RentalController` mencari data berdasarkan ID yang diberikan dan menghapus objek tersebut dari `ArrayList<Penyewa>` apabila data ditemukan.
+
+
 
 # 3. Penjelasan Alur Program
 1. Saat program dijalankan melalui `MainApp`, sistem akan memanggil metode dari `RentalView` untuk menampilkan Menu Utama (1-5).
 2. Sistem akan meload *dummy data* awal melalui konstruktor `RentalController` untuk keperluan pengujian.
-3. Jika pengguna memilih menu **Tambah Data (1)**, `View` akan meminta input data, lalu mengirimkan data tersebut ke `Controller` untuk disimpan ke dalam memori `ArrayList` di dalam `Model`.
+3. Jika pengguna memilih menu Tambah Data (1), View akan meminta input data, kemudian mengirimkan data tersebut kepada Controller untuk diproses dan disimpan ke dalam ArrayList<Penyewa> yang dikelola oleh Controller.
 
 <img width="739" height="414" alt="{B589CD10-5AD8-4687-9E06-CA67FDB022FC}" src="https://github.com/user-attachments/assets/edae733d-5596-40c6-a0cb-dc860f369cd8" />
 
 
-4. Jika pengguna memilih menu **Tampil Data (2)**, `View` akan meminta koleksi data dari `Controller` lalu mencetak detailnya ke layar secara dinamis (*Dynamic Method Dispatch*).
+4. Jika pengguna memilih menu Tampil Data (2), View akan meminta koleksi data dari Controller lalu mencetak detail setiap skateboard ke layar. Pada proses ini diterapkan Dynamic Method Dispatch, yaitu ketika objek StreetSkate atau CruiserSkate diperlakukan sebagai objek dari kelas induknya, Skateboard, Java akan menentukan implementasi metode tampilkanDetailPapan() berdasarkan tipe objek sebenarnya saat program berjalan (runtime).
 
 <img width="485" height="646" alt="{73C5ABA0-FBBA-4A72-8C46-093042D9B40E}" src="https://github.com/user-attachments/assets/45137e6a-8bdb-4694-8f7f-ebef00d66694" />
 <img width="503" height="293" alt="{491CBEC5-195E-4CCA-8155-54482D77FAA1}" src="https://github.com/user-attachments/assets/6a3d4a05-e8e8-4a0f-bfed-6e90574c88c6" />
@@ -42,7 +57,7 @@ Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Mode
 *   **Encapsulation (Pengkapsulan):**
     *   Penerapan *Access Modifier* `private` pada atribut spesifik seperti `ukuranRoda` pada `StreetSkate`, `panjangPapan` pada `CruiserSkate`, dan `ArrayList` pada kelas Controller.
     *   Penggunaan **Setter** (seperti `setLamaSewa` di kelas `Penyewa`) untuk memvalidasi masukan data (jika lama sewa diinput 0 atau negatif, setter memaksa nilainya menjadi minimal 1 hari).
-    *   Penggunaan *keyword* `final` pada atribut `idPapan` dan `idRental` agar nilainya bersifat mutlak (konstan) dan tidak bisa dimodifikasi setelah objek dibuat.
+    *   Penggunaan keyword final pada atribut idPapan dan idRental membuat nilai atribut tersebut hanya dapat diinisialisasi satu kali dan tidak dapat diubah setelah objek dibuat.
 
 
 *   **Inheritance (Pewarisan):** 
