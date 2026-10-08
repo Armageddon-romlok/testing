@@ -38,6 +38,7 @@ Proyek ini dirombak secara penuh dan dibangun menggunakan arsitektur **MVC (Mode
 
 6. Program akan terus berulang (loop) selama pengguna tidak menekan opsi **Keluar (5)**. Setiap input karakter salah dilindungi oleh struktur *Exception Handling*.
 
+## 3.1 Implementasi CRUD
 
 ### Create (Tambah Data)
 Proses **Create** digunakan untuk menambahkan data penyewaan baru ke dalam sistem. `RentalView` menerima input dari pengguna, kemudian mengirimkan data tersebut kepada `RentalController`. Controller melakukan validasi terhadap `ID Rental`, kemudian menambahkan objek `Penyewa` ke dalam `ArrayList<Penyewa>` apabila ID belum digunakan.
